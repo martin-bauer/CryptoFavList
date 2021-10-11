@@ -1,7 +1,6 @@
 package de.martinez.cryptofavlist.presentation.ui
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -18,7 +17,7 @@ class CryptoListViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _state = MutableLiveData(CryptoListState())
-    val state: MutableLiveData<CryptoListState> = _state
+    val state: LiveData<CryptoListState> = _state
 
     init {
         getCryptos()
