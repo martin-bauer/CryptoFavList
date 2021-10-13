@@ -14,10 +14,8 @@ class GetCryptoUseCase @Inject constructor(private val repository: CryptoReposit
     operator fun invoke(id: String): Flow<Resource<Crypto>> = flow {
         try {
             emit(Resource.Loading<Crypto>())
-            val coins = repository.getCoin(id).toCrypto()
-            val x = 0
-            emit(Resource.Success(coins))
-
+            val coin = repository.getCoin(id).toCrypto()
+            emit(Resource.Success(coin))
         } catch (e: HttpException) {
             emit(Resource.Error<Crypto>(e.localizedMessage ?: "error occured"))
         } catch (e: IOException) {

@@ -1,4 +1,4 @@
-package de.martinez.cryptofavlist.presentation.ui
+package de.martinez.cryptofavlist.presentation.ui.coinlist
 
 data class CryptoListState(
     val isloading: Boolean = false,

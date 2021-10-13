@@ -13,9 +13,7 @@ class GetCryptosUseCase @Inject constructor(private val repository: CryptoReposi
         try {
             emit(Resource.Loading<List<String>>())
             val coins = repository.getCoins()
-            val x = 0
             emit(Resource.Success(coins))
-
         } catch (e: HttpException) {
             emit(Resource.Error<List<String>>(e.localizedMessage ?: "error occured"))
         } catch (e: IOException) {

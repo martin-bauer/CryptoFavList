@@ -1,4 +1,4 @@
-package de.martinez.cryptofavlist.presentation.ui
+package de.martinez.cryptofavlist.presentation.ui.coinlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
